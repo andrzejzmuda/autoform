@@ -20,6 +20,7 @@ from rest_framework import routers
 from autoform import views
 
 router = routers.DefaultRouter()
+router.register(r'processors', views.ProcessorViewSet)
 router.register(r'actions', views.ActionViewSet)
 router.register(r'operations', views.OperationViewSet)
 router.register(r'authorisations', views.AuthorisationViewSet)

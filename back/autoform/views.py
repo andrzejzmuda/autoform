@@ -1,9 +1,16 @@
 from rest_framework import viewsets, permissions
-from .serializers import (ActionsSerializer,
+from .serializers import (ProcessorSerializer,
+                          ActionsSerializer,
                           OperationsSerializer,
                           AuthorisationsSerializer)
 
-from .models import Actions, Operations, Authorisations
+from .models import Processor, Actions, Operations, Authorisations
+
+
+class ProcessorViewSet(viewsets.ModelViewSet):
+    queryset = Processor.objects.all()
+    serializer_class = ProcessorSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 class ActionViewSet(viewsets.ModelViewSet):
