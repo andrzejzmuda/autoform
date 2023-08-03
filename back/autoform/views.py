@@ -1,10 +1,19 @@
 from rest_framework import viewsets, permissions
-from .serializers import (ProcessorSerializer,
+from rest_framework.authtoken.models import Token
+
+from .serializers import (TokenSerializer,
+                          ProcessorSerializer,
                           ActionsSerializer,
                           OperationsSerializer,
                           AuthorisationsSerializer)
 
 from .models import Processor, Actions, Operations, Authorisations
+
+
+class TokenViewSet(viewsets.ModelViewSet):
+    queryset = Token.objects.all().order_by('-user_id')
+    serializer_class = TokenSerializer
+    permission_classes = [permissions.AllowAny]
 
 
 class ProcessorViewSet(viewsets.ModelViewSet):

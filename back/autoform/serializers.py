@@ -1,5 +1,13 @@
-from .models import Processor, Actions, Operations, Authorisations
 from rest_framework import serializers
+from rest_framework.authtoken.models import Token
+
+from .models import Processor, Actions, Operations, Authorisations
+
+
+class TokenSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Token
+        fields = ['key', 'created', 'user_id']
 
 
 class ProcessorSerializer(serializers.HyperlinkedModelSerializer):
