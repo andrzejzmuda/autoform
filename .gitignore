@@ -1,6 +1,6 @@
 *.pyc
 
-
+/*/node_modules/
 /*/__pycache__/
 /back/autoform/migrations/
 project/db.sqlite3
