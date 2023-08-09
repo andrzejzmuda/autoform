@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Router
+  Route
 } from "react-router-dom";
 
 import Login from './components/Login/login';
@@ -21,14 +20,12 @@ function App() {
     <div className='wrapper'>
       <h1>Hello!</h1>
       <BrowserRouter>
-      <Router>
         <Routes>
           <Route
             path="/processors"
             element = {<Processors />}
           />
         </Routes>
-      </Router>
     </BrowserRouter>
     </div>
   );
